@@ -26,12 +26,15 @@ gem "bootsnap", ">= 1.4.2", require: false
 
 gem "jwt"
 gem "simple_command"
+gem "httparty"
+gem "textmood"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
 group :test do
   gem "rspec-rails"
+  gem "webmock"
 end
 
 group :development, :test do

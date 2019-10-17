@@ -6,6 +6,10 @@ ENV["RAILS_ENV"] ||= "test"
 
 require File.expand_path("../config/environment", __dir__)
 require File.expand_path("./support/factory_bot", __dir__)
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
+require "webmock/rspec"
+WebMock.disable_net_connect!(allow_localhost: true)
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
